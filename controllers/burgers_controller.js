@@ -16,17 +16,10 @@ router.get("/", function(req, res) {
      });
 });
 
-router.post("/api/burgers", function(req, res) {
-     burger.create(
-          ["name", "devoured"],
-          //   maybe be problem here in body.name
-          [(req.body.name, req.body.devoured)],
-          function(result) {
-               // Send back the ID of the new quote
-               console.log(result);
-               res.json({ id: result.insertId });
-          }
-     );
+router.get("/api/burgers", function(req, res) {
+     burger.all(function(data) {
+          res.json(data);
+     });
 });
 
 router.put("/api/burgers/:id", function(req, res) {

@@ -1,47 +1,65 @@
-<h1>Eat da burger!</h1>
+<style>
 
+</style>
 
-{{!-- <ul>
-    {{#each burgers_name}}
+<h1 class="text-center">Eat da burger!</h1>
+
+<img id="burger-picture" src="assets/img/burger.png" width="500">
+<ul class="text-center" id="burgerlist">
+    {{#each burgers}}
     {{#unless devoured}}
-    {{> burgers/burger-block sleep=true}}
+    <p>
+        {{this.id}}. {{this.burger_name}}
+
+        <button data-burgerid="{{this.id}}" data-burgerstate="{{this.devoured}}"
+            class="devour-the-burger btn btn-danger">Devour!</button>
+    </p>
     {{/unless}}
     {{/each}}
 </ul>
 
-<h2>Burgers devoured!</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burger-block sleep=false}}
-    {{/if}}
-    {{/each}}
-</ul> --}}
-
-<ul>
-    {{#each burgers}}
-    <li>
-        <p>
-            {{this.id}}. {{this.burger_name}}
-
-            <button data-burgerid="{{this.id}}" class="devour">Devour!</button>
-        </p>
-    </li>
-    {{/each}}
-</ul>
 
 
 
 
 
-
-<h2>Enter a burger you want to eat!</h2>
-<form class="create-form">
+<h2 class="text-center">Enter a burger you want to eat!</h2>
+<form class="create-form text-center">
 
     <div class="form-group">
         <input type="text" id="burger-to-order" name="name">
     </div>
 
-    <button id="submit" type="submit">Submit</button>
+    <button class="btn btn-primary" id="submit" type="submit">Submit</button>
 </form>
+
+
+<script type="text/javascript">
+    $(".devour-the-burger").on("click", function (event) {
+        let id = $(this).data("burgerid");
+        let id2 = $(this).data("burgerstate");
+        console.log(id, id2);
+
+        if (id2 === 0) {
+            $(this).hide();
+        }
+
+        alert("clicked");
+
+
+
+    });
+
+    // on click, it should add a burger to the list to devour.
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+        console.log("lol");
+        alert("hello");
+    });
+
+
+
+
+
+
+</script>
