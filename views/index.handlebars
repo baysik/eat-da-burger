@@ -27,39 +27,8 @@
 <form class="create-form text-center">
 
     <div class="form-group">
-        <input type="text" id="burger-to-order" name="name">
+        <input type="text" id="burger-to-order" name="burger-name">
     </div>
 
-    <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+    <button class="btn btn-primary add-burger" id="submit" type="submit">Submit</button>
 </form>
-
-
-<script type="text/javascript">
-    $(".devour-the-burger").on("click", function (event) {
-        let id = $(this).data("burgerid");
-        let id2 = $(this).data("burgerstate");
-        console.log(id, id2);
-
-        if (id2 === 0) {
-            $(this).hide();
-        }
-
-        alert("clicked");
-
-
-
-    });
-
-    // on click, it should add a burger to the list to devour.
-    $("#submit").on("click", function (event) {
-        event.preventDefault();
-        console.log("lol");
-        alert("hello");
-    });
-
-
-
-
-
-
-</script>
