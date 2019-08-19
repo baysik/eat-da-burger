@@ -20,7 +20,7 @@ $(function() {
      });
 
      // on click, it should add a burger to the list to devour.
-     $(".add-burger").on("submit", function(event) {
+     $(".add-burger").on("click", function(event) {
           event.preventDefault();
           console.log($("[name=burger-name]").val());
 
@@ -37,7 +37,7 @@ $(function() {
           }).then(function() {
                console.log("created new burger");
                // Reload the page to get the updated list
-               //location.reload();
+               location.reload();
           });
      });
 });

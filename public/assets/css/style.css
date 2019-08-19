@@ -1,6 +1,9 @@
 body {
      font-family: "Amatic SC", cursive;
      margin-bottom: 100px;
+     margin-top: 20px;
+     margin-right: 20px;
+     margin-left: 20px;
 }
 
 #burger-picture {
@@ -12,6 +15,10 @@ body {
 h1 {
      font-family: "Righteous", cursive;
      font-size: 80px;
+}
+.list-title {
+     font-size: 60px;
+     text-decoration: underline;
 }
 #burgerlist {
      margin-top: 20px;
